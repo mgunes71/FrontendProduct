@@ -4,6 +4,7 @@ import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {AdminLayoutComponent} from "./layouts/admin-layout/admin-layout.component";
 import {AdminHomeComponent} from "./pages/admin-home/admin-home.component";
+import {AdminCategoryEditComponent} from "./pages/admin-category-edit/admin-category-edit.component";
 
 
 // localhost/
@@ -21,9 +22,16 @@ const routes: Routes = [
     children:[
       {
         path: "", component: AdminHomeComponent
+      },
+      {
+        path:"category", component: AdminCategoryEditComponent
+      },
+      {
+        path:"category/:id", component: AdminCategoryEditComponent
       }
     ]
-  }
+  },
+
 ];
 
 @NgModule({
