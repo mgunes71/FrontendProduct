@@ -38,7 +38,7 @@ export class AdminCategoryEditComponent implements OnInit {
       this.categoryService.getCategoryById(this.categoryId).subscribe(result => {
         this.category = result;
         //  htmlde update basınca dolu gelemsi için, silme işleminde tekrar çalısıyor onınıten dolayı oyuzden name? varsa dedik
-        this.categoryForm.controls.name?.setValue(this.category.name);
+        this.categoryForm?.controls?.name?.setValue(this.category?.name);
       })
     }
 

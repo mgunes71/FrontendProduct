@@ -5,6 +5,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import {AdminLayoutComponent} from "./layouts/admin-layout/admin-layout.component";
 import {AdminHomeComponent} from "./pages/admin-home/admin-home.component";
 import {AdminCategoryEditComponent} from "./pages/admin-category-edit/admin-category-edit.component";
+import {AdminProductEditComponent} from "./pages/admin-product-edit/admin-product-edit.component";
 
 
 // localhost/
@@ -28,6 +29,12 @@ const routes: Routes = [
       },
       {
         path:"category/:id", component: AdminCategoryEditComponent
+      },
+      {
+        path:"product", component: AdminProductEditComponent
+      },
+      {
+        path:"product/:id", component: AdminProductEditComponent
       }
     ]
   },

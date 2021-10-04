@@ -7,6 +7,12 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+
+
 
 
 
@@ -17,10 +23,12 @@ import {MatTableModule} from "@angular/material/table";
     MatToolbarModule,
     MatButtonModule,
     MatTabsModule,MatFormFieldModule,MatInputModule,
-    MatPaginatorModule,MatTableModule
+    MatPaginatorModule,MatTableModule,MatIconModule,
+    MatAutocompleteModule,FormsModule, ReactiveFormsModule
   ],
   exports: [MatToolbarModule, MatButtonModule, MatTabsModule,
-    MatFormFieldModule,MatInputModule,MatPaginatorModule,MatTableModule]
+    MatFormFieldModule,MatInputModule,MatPaginatorModule,MatTableModule,MatIconModule,
+    MatAutocompleteModule,FormsModule, ReactiveFormsModule]
 })
 export class MaterialModule {
 }
