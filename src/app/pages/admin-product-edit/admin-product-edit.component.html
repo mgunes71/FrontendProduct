@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <h2>{{title}}</h2>
+    <form class="form-control" (ngSubmit)="onSubmit()"
+          [formGroup]="productForm">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+
+              <div><!--            <input type="text" name="categoryBy" formControlName="categoryBy" class="form-control mt-2">-->
+
+
+                <!--              <div class="input-group-prepend">-->
+                <!--                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>-->
+
+                <!--                <div class="dropdown-menu">-->
+                <!--                  <input  type="text" placeholder="Kategori Seçimi" formControlName="categoryBy">-->
+                <!--                  <a *ngFor="let item of categories" class="dropdown-item"  >{{item.name}}</a>-->
+                <!--                  <div role="separator" class="dropdown-divider"></div>-->
+                <!--                  <a class="dropdown-item" href="#">Separated link</a>-->
+                <!--                </div>-->
+                <!--              </div>-->
+
+                <!--            <input type="text" name="title" formControlName="title" class="form-control mt-2">-->
+                <!--            <input type="text" name="author" formControlName="author" class="form-control mt-2">-->
+                <!--            <input type="text" name="price" formControlName="price" class="form-control mt-2">-->
+                <!--            <input type="text" name="stock" formControlName="stock" class="form-control mt-2">-->
+
+                <!--            <div>-->
+                <!--              <input type="file" (change)="upload($event)"/>-->
+                <!--            </div>-->
+
+                <!--            <button type="submit" class="btn btn-primary mt-2">Ekle</button>--></div>
+
+
+                      <mat-form-field>
+                        <input matInput type="text" placeholder="Kategori Seç"
+                               formControlName="categoryBy"  [matAutocomplete]="auto" />
+
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCategoryName">
+
+                          <mat-option *ngFor="let item of categories" [value]="item">{{item.name}}</mat-option>
+
+                        </mat-autocomplete>
+                      </mat-form-field>
+
+                  <div>
+                    <input type="file" (change)="upload($event)"/>
+                  </div>
+
+                  <mat-form-field appearance="fill">
+                    <input id="input" matInput formControlName="title" placeholder="Ürün Başlık">
+
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <input matInput formControlName="author" placeholder="Üretici">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <input matInput formControlName="price" placeholder="Fiyat">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <input matInput formControlName="stock" placeholder="Stok">
+                  </mat-form-field>
+                  <button type="submit" mat-raised-button color="primary" class="mt-2">{{btnText}}</button>
+
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -16,12 +16,13 @@ import {AdminCategoryEditComponent} from './admin-category-edit/admin-category-e
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminCategoryListComponent} from './admin-category-list/admin-category-list.component';
+import { AdminProductEditComponent } from './admin-product-edit/admin-product-edit.component';
 
 
 
 
 @NgModule({
-  declarations: [MainLayoutComponent, HomeComponent, HeaderComponent, AdminLayoutComponent, AdminHomeComponent, AdminCategoryEditComponent, AdminCategoryListComponent],
+  declarations: [MainLayoutComponent, HomeComponent, HeaderComponent, AdminLayoutComponent, AdminHomeComponent, AdminCategoryEditComponent, AdminCategoryListComponent, AdminProductEditComponent],
   imports: [
     CommonModule,
     BrowserModule,
