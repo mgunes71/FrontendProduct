@@ -48,6 +48,20 @@ export class AdminProductEditComponent implements OnInit {
       this.type = "add";
     } else {
       //  id varsa update islemi
+      this.title = "Ürün Güncelleme";
+      this.btnText = "Güncelle";
+      this.type = "update";
+
+      this.productService.getProductById(this.productId).subscribe(result=>{
+        this.product = result;
+
+        this.productForm.controls.title.setValue(this.product.title);
+        this.productForm.controls.author.setValue(this.product.author);
+        this.productForm.controls.price.setValue(this.product.price);
+        this.productForm.controls.stock.setValue(this.product.stock);
+        this.productForm.controls.picture.setValue(this.product.picture);
+        this.productForm.controls.categoryBy.setValue(this.product.categoryBy);
+      });
 
     }
 
@@ -57,7 +71,7 @@ export class AdminProductEditComponent implements OnInit {
       price: new FormControl("", Validators.required),
       stock: new FormControl("", Validators.required),
       picture: new FormControl(""),
-      categoryBy: new FormControl("")
+      categoryBy: new FormControl("", Validators.required)
     });
 
 
@@ -86,6 +100,23 @@ export class AdminProductEditComponent implements OnInit {
 
       } else {
         //  update işlemi
+        if (this.formData==null){
+          this.productService.updateProduct(this.product._id,this.productForm.value)
+            .subscribe(result=>{
+              this.router.navigateByUrl("/admin");
+            })
+        }
+        else {
+          this.productService.saveProductImage(this.formData).pipe(map(result => {
+                // backend de saveImage yerinde key olarak url verdik buyüzden res.url
+                this.productForm.controls.picture.setValue(result.url);
+              },
+            ), mergeMap(() => this.productService.updateProduct(this.product._id,this.productForm.value))
+          ).subscribe(result => {
+            this.router.navigateByUrl("/admin");
+          });
+
+        }
       }
 
     }

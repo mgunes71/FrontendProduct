@@ -1,0 +1,73 @@
+
+<a class="mt-2" mat-raised-button color="warn" routerLink="/admin/product">Add Product</a>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef><h3>No.</h3></th>
+      <td mat-cell *matCellDef="let product"><b>{{product.number}}</b></td>
+    </ng-container>
+
+    <ng-container matColumnDef="picture">
+      <th mat-header-cell *matHeaderCellDef><h3>Image.</h3></th>
+      <td mat-cell *matCellDef="let product">
+        <img [src]="product.picture" alt="" style="width: 50px; height: 50px">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef><h3>Başlık.</h3></th>
+      <td mat-cell *matCellDef="let product"><b>{{product.title}}</b></td>
+    </ng-container>
+
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef><h3>Üretici</h3></th>
+      <td mat-cell *matCellDef="let product"><b>{{product.author}}</b></td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef><h3>Fiyat</h3></th>
+      <td mat-cell *matCellDef="let product"><b>{{product.price}} TL</b></td>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef><h3>Adet</h3></th>
+      <td mat-cell *matCellDef="let product"><b>{{product.stock}}</b></td>
+    </ng-container>
+
+    <ng-container matColumnDef="categoryBy">
+      <th mat-header-cell *matHeaderCellDef><h3>Kategori</h3></th>
+      <td mat-cell *matCellDef="let product"><b>{{product.categoryBy.name}}</b></td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef><h3>İşlemler</h3> </th>
+      <td mat-cell *matCellDef="let product"> {{product.action}}
+        <a mat-raised-button color="primary" [routerLink]="['/admin/product',product._id]">
+          <mat-icon>update</mat-icon> Update</a>
+        <a>
+          <button type="button" (click)="delete(product._id)" style="margin-left: 30px" mat-raised-button color="warn"
+                  [routerLink]="['/admin/category',product._id]">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+        </a>
+
+      </td>
+    </ng-container>
+
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+</div>
