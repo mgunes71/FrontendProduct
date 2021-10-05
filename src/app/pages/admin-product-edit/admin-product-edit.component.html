@@ -51,6 +51,11 @@
 
                   <mat-form-field appearance="fill">
                     <input id="input" matInput formControlName="title" placeholder="Ürün Başlık">
+                    <mat-error *ngIf="this.productForm.controls.title.invalid">
+                      <div *ngIf="this.productForm.controls.title.hasError('required')">
+                        Bu alan boş geçilemez!!
+                      </div>
+                    </mat-error>
 
                   </mat-form-field>
 

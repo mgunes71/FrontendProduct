@@ -1,40 +1,43 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {AdminLayoutComponent} from "./layouts/admin-layout/admin-layout.component";
 import {AdminHomeComponent} from "./pages/admin-home/admin-home.component";
 import {AdminCategoryEditComponent} from "./pages/admin-category-edit/admin-category-edit.component";
 import {AdminProductEditComponent} from "./pages/admin-product-edit/admin-product-edit.component";
+import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 
 
 // localhost/
 const routes: Routes = [
   {
-    path:"", component:MainLayoutComponent,
-    children:[
+    path: "", component: MainLayoutComponent,
+    children: [
       {
-        path:"", component:HomeComponent
-      }
+        path: "", component: HomeComponent
+      },
+      {path: "category/:id", component: HomeComponent},
+      {path: "product/:id", component: ProductDetailComponent}
     ]
   },
   {
-    path:"admin", component:AdminLayoutComponent,
-    children:[
+    path: "admin", component: AdminLayoutComponent,
+    children: [
       {
         path: "", component: AdminHomeComponent
       },
       {
-        path:"category", component: AdminCategoryEditComponent
+        path: "category", component: AdminCategoryEditComponent
       },
       {
-        path:"category/:id", component: AdminCategoryEditComponent
+        path: "category/:id", component: AdminCategoryEditComponent
       },
       {
-        path:"product", component: AdminProductEditComponent
+        path: "product", component: AdminProductEditComponent
       },
       {
-        path:"product/:id", component: AdminProductEditComponent
+        path: "product/:id", component: AdminProductEditComponent
       }
     ]
   },
@@ -45,4 +48,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

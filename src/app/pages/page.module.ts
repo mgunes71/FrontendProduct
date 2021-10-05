@@ -17,12 +17,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminCategoryListComponent} from './admin-category-list/admin-category-list.component';
 import { AdminProductEditComponent } from './admin-product-edit/admin-product-edit.component';
+import { AdminProductListComponent } from './admin-product-list/admin-product-list.component';
+import { CategoryMenuComponent } from './category-menu/category-menu.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 
 
 @NgModule({
-  declarations: [MainLayoutComponent, HomeComponent, HeaderComponent, AdminLayoutComponent, AdminHomeComponent, AdminCategoryEditComponent, AdminCategoryListComponent, AdminProductEditComponent],
+  declarations: [MainLayoutComponent, HomeComponent, HeaderComponent, AdminLayoutComponent, AdminHomeComponent, AdminCategoryEditComponent, AdminCategoryListComponent, AdminProductEditComponent, AdminProductListComponent, CategoryMenuComponent, ProductDetailComponent],
   imports: [
     CommonModule,
     BrowserModule,
