@@ -10,6 +10,8 @@ import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 
 
 
@@ -24,11 +26,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatButtonModule,
     MatTabsModule,MatFormFieldModule,MatInputModule,
     MatPaginatorModule,MatTableModule,MatIconModule,
-    MatAutocompleteModule,FormsModule, ReactiveFormsModule
+    MatAutocompleteModule,FormsModule, ReactiveFormsModule,MatCardModule,
+    MatListModule
   ],
   exports: [MatToolbarModule, MatButtonModule, MatTabsModule,
     MatFormFieldModule,MatInputModule,MatPaginatorModule,MatTableModule,MatIconModule,
-    MatAutocompleteModule,FormsModule, ReactiveFormsModule]
+    MatAutocompleteModule,FormsModule, ReactiveFormsModule,MatCardModule,MatListModule]
 })
 export class MaterialModule {
 }

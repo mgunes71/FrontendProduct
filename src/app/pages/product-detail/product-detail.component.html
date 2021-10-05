@@ -1,0 +1,33 @@
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>Ürün Detayları</h2>
+    <hr>
+  </div>
+
+  <div class="col-md-4">
+    <img style="width: 300px" [src]="product.picture" alt="">
+  </div>
+
+  <div class="col-md-8">
+    <mat-list style="font-size: 14px; font-weight: bold; margin-left: 10px">
+      <mat-list-item>
+        <span class="product-detail-text">Üretici:</span> {{product.author}}
+      </mat-list-item>
+
+      <mat-list-item>
+        <span class="product-detail-text">Fiyat:</span> {{product.price}} TL
+      </mat-list-item>
+
+      <mat-list-item>
+        <span class="product-detail-text">Stok:</span> {{product.stock}} TL
+      </mat-list-item>
+
+      <mat-list-item>
+        <span class="product-detail-text">Category:</span> {{product.categoryBy?.name}} TL
+      </mat-list-item>
+
+    </mat-list>
+  </div>
+</div>

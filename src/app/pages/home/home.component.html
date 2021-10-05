@@ -1,1 +1,17 @@
-<p>home works!</p>
+<a *ngFor="let product of products" [routerLink]="['/product', product._id]">
+
+  <mat-card class="cardProduct">
+    <mat-card-content style="padding: 10px">
+      <img mat-card-image [src]="product.picture" alt=""/>
+    </mat-card-content>
+
+    <mat-card-actions style="margin-left: 10px">
+      <div>
+        <strong>{{product.author}}</strong>
+      </div>
+      <div class="mt-1">
+        <strong style="color: blue">{{product.price}} TL</strong>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</a>

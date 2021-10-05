@@ -25,6 +25,11 @@ export class ProductService {
       .pipe(map(result=> result.data));
   }
 
+  getProductByCategoryId(id:string){
+    return this.httpClient.get<any>(this.apiUrl + "catpro/"+ id)
+      .pipe(map(result=> result.data));
+  }
+
   addProduct(product: Product) {
     return this.httpClient.post<any>(this.apiUrl + "product", product);
   }
